@@ -9,9 +9,7 @@ import android.hardware.SensorManager;
 
 import java.util.Observable;
 
-/**
- * Created by ehar on 8/12/2016.
- */
+
 public class AccelerometerHandler
         extends Observable
         implements SensorEventListener {
