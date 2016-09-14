@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Accelerometer and GPS Coordinates</string>
+    <string name="app_name">Accelerometer and GPS</string>
     <string name="_0">0</string>
     <string name="gps_coordinates">GPS Coordinates</string>
     <string name="accelerometer">Accelerometer</string>
@@ -8,4 +8,5 @@
     <string name="z">Z</string>
     <string name="lat">Lat</string>
     <string name="lon">Long</string>
+
 </resources>

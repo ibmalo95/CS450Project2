@@ -2,17 +2,11 @@ package com.example.ehar.SensorExample;
 
 import android.Manifest;
 import android.content.pm.PackageManager;
-import android.hardware.Sensor;
-import android.hardware.SensorEvent;
-import android.hardware.SensorManager;
 import android.os.Bundle;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.TextView;
-import android.widget.Toast;
-
-import org.w3c.dom.Text;
 
 import java.util.Observable;
 import java.util.Observer;
@@ -62,7 +56,7 @@ public class MainActivity2
         gps_lat_view = (TextView) findViewById(R.id.gps_lat);
         gps_lon_view = (TextView) findViewById(R.id.gps_lon);
         this.getPermissions();
-        this.gpsCo = new gpsCooridinates(this);
+        this.gpsCo = new gpsCoordinates(this);
         this.gpsCo.addObserver(this);
 
 
