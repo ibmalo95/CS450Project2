@@ -7,6 +7,7 @@ import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.Observable;
 import java.util.Observer;
@@ -76,8 +77,8 @@ public class MainActivity2
             // Should we show an explanation?
             if (ActivityCompat.shouldShowRequestPermissionRationale(this,
                     Manifest.permission.ACCESS_FINE_LOCATION)) {
-
                 // if user denys continue; only the accelerometer values will be visible
+                Toast.makeText(this, R.string.require_permission, Toast.LENGTH_SHORT).show();
 
             } else {
 
@@ -92,17 +93,12 @@ public class MainActivity2
     protected void onStart() {
         super.onStart();
 
-        String x = getPreferences(MODE_PRIVATE).getString(X, "0");
-        String y = getPreferences(MODE_PRIVATE).getString(Y, "0");
-        String z = getPreferences(MODE_PRIVATE).getString(Z, "0");
-        String lat = getPreferences(MODE_PRIVATE).getString(LAT, "0");
-        String lon = getPreferences(MODE_PRIVATE).getString(LON, "0");
+        accel_x_view.setText(getPreferences(MODE_PRIVATE).getString(X, "0"));
+        accel_y_view.setText(getPreferences(MODE_PRIVATE).getString(Y, "0"));
+        accel_z_view.setText(getPreferences(MODE_PRIVATE).getString(Z, "0"));
+        gps_lat_view.setText(getPreferences(MODE_PRIVATE).getString(LAT, "0"));
+        gps_lon_view.setText(getPreferences(MODE_PRIVATE).getString(LON, "0"));
 
-        gps_lat_view.setText(lat);
-        gps_lon_view.setText(lon);
-        accel_x_view.setText(x);
-        accel_y_view.setText(y);
-        accel_z_view.setText(z);
     }
 
     @Override

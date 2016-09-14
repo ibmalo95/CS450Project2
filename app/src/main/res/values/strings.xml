@@ -8,5 +8,6 @@
     <string name="z">Z</string>
     <string name="lat">Lat</string>
     <string name="lon">Long</string>
+    <string name="require_permission">Need access to location</string>
 
 </resources>
