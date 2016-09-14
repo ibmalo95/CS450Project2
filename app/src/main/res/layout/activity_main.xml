@@ -17,6 +17,7 @@
         android:text="@string/accelerometer"
         android:layout_marginBottom="@dimen/default_margin"
         android:textSize="@dimen/text_size"
+        android:textColor="@color/green"
         android:textStyle="bold"/>
 
     <GridLayout
@@ -64,6 +65,7 @@
         android:layout_marginTop="@dimen/default_margin"
         android:layout_marginBottom="@dimen/default_margin"
         android:textSize="@dimen/text_size"
+        android:textColor="@color/green"
         android:textStyle="bold"/>
 
 

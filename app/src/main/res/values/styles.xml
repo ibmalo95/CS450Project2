@@ -25,6 +25,7 @@
         <item name="android:layout_weight">1</item>
         <item name="android:textStyle">bold</item>
         <item name="android:layout_gravity">center</item>
+        <item name="android:textColor">@color/green</item>
         <item name="android:padding">@dimen/default_padding</item>
     </style>
 
