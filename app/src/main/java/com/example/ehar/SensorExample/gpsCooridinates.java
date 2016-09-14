@@ -24,24 +24,25 @@ public class gpsCooridinates
 
     LocationManager locationManager;
     LocationListener locationListener;
-//    Location location;
     double lat = 0;
     double lon = 0;
 
     public gpsCooridinates(Activity act) {
         locationManager = (LocationManager) act.getSystemService(Context.LOCATION_SERVICE);
+
+        if (ContextCompat.checkSelfPermission(act, Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
+            locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 0, locationListener);
+        }
+
         locationListener = new LocationListener() {
             // Called when a new location is found by the network location provider.
             @Override
             public void onLocationChanged(Location location) {
-                System.out.println("changed");
                 lat = location.getLatitude();
                 lon = location.getLongitude();
                 double [] coordinates = {lat, lon};
-                System.out.println(coordinates.toString());
                 setChanged();
                 notifyObservers(coordinates);
-
             }
 
             @Override
@@ -59,9 +60,7 @@ public class gpsCooridinates
 
             }
         };
-        if (ContextCompat.checkSelfPermission(act, Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
-            locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 0, locationListener);
-        }
+
     }
 
 }

@@ -23,6 +23,11 @@ public class MainActivity2
         implements Observer {
 
     public final int PERMISSIONS_ACCESS_FINE_LOCATION = 1;
+    public final String X = "X";
+    public final String Y = "Y";
+    public final String Z = "Z";
+    public final String LAT = "LAT";
+    public final String LON = "LON";
 
     // textviews
     private TextView accel_x_view = null;
@@ -89,6 +94,22 @@ public class MainActivity2
                         new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, PERMISSIONS_ACCESS_FINE_LOCATION);
             }
         }
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+
+        getPreferences(MODE_PRIVATE).edit().putString(X, accel_x_view.getText().toString()).apply();
+        getPreferences(MODE_PRIVATE).edit().putString(Y, accel_y_view.getText().toString()).apply();
+        getPreferences(MODE_PRIVATE).edit().putString(Z, accel_z_view.getText().toString()).apply();
+        getPreferences(MODE_PRIVATE).edit().putString(LAT, gps_lat_view.getText().toString()).apply();
+        getPreferences(MODE_PRIVATE).edit().putString(LON, gps_lon_view.getText().toString()).apply();
     }
 
     @Override

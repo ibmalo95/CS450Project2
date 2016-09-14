@@ -15,10 +15,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/accelerometer"
+        android:layout_marginBottom="20sp"
         android:textSize="45sp"/>
 
     <GridLayout
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:rowCount="3"
         android:columnCount="2">
@@ -59,6 +60,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/gps_coordinates"
+        android:layout_marginTop="20sp"
+        android:layout_marginBottom="20sp"
         android:textSize="45sp"/>
 
 
@@ -69,22 +72,22 @@
         android:columnCount="2">
 
         <TextView
+            android:id="@+id/gps_lat"
+            style="@style/accel_gps_value" />
+
+        <TextView
             android:id="@+id/gps_lat_label"
             style="@style/accel_gps_label"
             android:text="Lat"/>
 
         <TextView
+            android:id="@+id/gps_lon"
+            style="@style/accel_gps_value" />
+
+        <TextView
             android:id="@+id/gps_lon_label"
             style="@style/accel_gps_label"
             android:text="Long"/>
-
-        <TextView
-            android:id="@+id/gps_lat"
-            style="@style/accel_gps_value" />
-
-        <TextView
-            android:id="@+id/gps_lon"
-            style="@style/accel_gps_value" />
 
     </GridLayout>
 
