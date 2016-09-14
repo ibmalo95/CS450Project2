@@ -13,6 +13,7 @@ import android.location.LocationManager;
 import android.os.Bundle;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
+import android.widget.Toast;
 
 import java.util.Observable;
 
@@ -28,12 +29,8 @@ public class gpsCooridinates
     double lon = 0;
 
     public gpsCooridinates(Activity act) {
+        final Activity activity = act;
         locationManager = (LocationManager) act.getSystemService(Context.LOCATION_SERVICE);
-
-        if (ContextCompat.checkSelfPermission(act, Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
-            locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 0, locationListener);
-        }
-
         locationListener = new LocationListener() {
             // Called when a new location is found by the network location provider.
             @Override
@@ -47,7 +44,12 @@ public class gpsCooridinates
 
             @Override
             public void onStatusChanged(String provider, int status, Bundle extras) {
-
+                if (status == 2)
+                    Toast.makeText(activity, "Provider Available", Toast.LENGTH_SHORT).show();
+                else if (status == 1)
+                    Toast.makeText(activity, "Provider Temporarily Unavailable", Toast.LENGTH_SHORT).show();
+                else
+                    Toast.makeText(activity, "Provider Out of Service", Toast.LENGTH_SHORT).show();
             }
 
             @Override
@@ -60,6 +62,9 @@ public class gpsCooridinates
 
             }
         };
+        if (ContextCompat.checkSelfPermission(act, Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
+            locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 0, locationListener);
+        }
 
     }
 

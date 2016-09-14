@@ -11,9 +11,9 @@
     <style name="accel_gps_value">
         <item name= "android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:textSize">45sp</item>
+        <item name="android:textSize">@dimen/text_size</item>
         <item name="android:layout_weight">1</item>
-        <item name="android:padding">10dp</item>
+        <item name="android:padding">@dimen/default_padding</item>
         <item name="android:layout_gravity">left</item>
         <item name="android:text">@string/_0</item>
     </style>
@@ -21,11 +21,11 @@
     <style name="accel_gps_label">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:textSize">45sp</item>
+        <item name="android:textSize">@dimen/text_size</item>
         <item name="android:layout_weight">1</item>
         <item name="android:textStyle">bold</item>
         <item name="android:layout_gravity">center</item>
-        <item name="android:padding">10dp</item>
+        <item name="android:padding">@dimen/default_padding</item>
     </style>
 
 </resources>

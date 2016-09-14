@@ -83,9 +83,7 @@ public class MainActivity2
             if (ActivityCompat.shouldShowRequestPermissionRationale(this,
                     Manifest.permission.ACCESS_FINE_LOCATION)) {
 
-                // Show an explanation to the user *asynchronously* -- don't block
-                // this thread waiting for the user's response! After the user
-                // sees the explanation, try again to request the permission.
+                // if user denys continue; only the accelerometer values will be visible
 
             } else {
 
@@ -99,6 +97,18 @@ public class MainActivity2
     @Override
     protected void onStart() {
         super.onStart();
+
+        String x = getPreferences(MODE_PRIVATE).getString(X, "0");
+        String y = getPreferences(MODE_PRIVATE).getString(Y, "0");
+        String z = getPreferences(MODE_PRIVATE).getString(Z, "0");
+        String lat = getPreferences(MODE_PRIVATE).getString(LAT, "0");
+        String lon = getPreferences(MODE_PRIVATE).getString(LON, "0");
+
+        gps_lat_view.setText(lat);
+        gps_lon_view.setText(lon);
+        accel_x_view.setText(x);
+        accel_y_view.setText(y);
+        accel_z_view.setText(z);
     }
 
     @Override

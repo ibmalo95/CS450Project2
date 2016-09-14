@@ -15,8 +15,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/accelerometer"
-        android:layout_marginBottom="20sp"
-        android:textSize="45sp"/>
+        android:layout_marginBottom="@dimen/default_margin"
+        android:textSize="@dimen/text_size"
+        android:textStyle="bold"/>
 
     <GridLayout
         android:layout_width="wrap_content"
@@ -32,7 +33,7 @@
         <TextView
             android:id="@+id/accel_x_label"
             style="@style/accel_gps_label"
-            android:text="X" />
+            android:text="@string/x" />
 
         <TextView
             android:id="@+id/accel_y"
@@ -42,7 +43,7 @@
         <TextView
             android:id="@+id/accel_y_label"
             style="@style/accel_gps_label"
-            android:text="Y" />
+            android:text="@string/y" />
 
         <TextView
             android:id="@+id/accel_z"
@@ -52,7 +53,7 @@
         <TextView
             android:id="@+id/accel_z_label"
             style="@style/accel_gps_label"
-            android:text="Z" />
+            android:text="@string/z" />
 
     </GridLayout>
 
@@ -60,9 +61,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/gps_coordinates"
-        android:layout_marginTop="20sp"
-        android:layout_marginBottom="20sp"
-        android:textSize="45sp"/>
+        android:layout_marginTop="@dimen/default_margin"
+        android:layout_marginBottom="@dimen/default_margin"
+        android:textSize="@dimen/text_size"
+        android:textStyle="bold"/>
 
 
     <GridLayout
@@ -78,7 +80,7 @@
         <TextView
             android:id="@+id/gps_lat_label"
             style="@style/accel_gps_label"
-            android:text="Lat"/>
+            android:text="@string/lat"/>
 
         <TextView
             android:id="@+id/gps_lon"
@@ -87,7 +89,7 @@
         <TextView
             android:id="@+id/gps_lon_label"
             style="@style/accel_gps_label"
-            android:text="Long"/>
+            android:text="@string/lon"/>
 
     </GridLayout>
 
