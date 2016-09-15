@@ -24,7 +24,6 @@ public class gpsCoordinates
     double lon = 0;
 
     public gpsCoordinates(Activity act) {
-        final Activity activity = act;
         locationManager = (LocationManager) act.getSystemService(Context.LOCATION_SERVICE);
         locationListener = new LocationListener() {
             // Called when a new location is found by the GPS location provider.
